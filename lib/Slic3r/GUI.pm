@@ -131,6 +131,13 @@ sub OnInit {
     return 1;
 }
 
+sub MacOpenFiles {
+    my $self = shift;
+    my @files = @_;
+
+    $self->{skeinpanel}->{plater}->load_file($_) for @files;
+}
+
 sub about {
     my $frame = shift;
     
